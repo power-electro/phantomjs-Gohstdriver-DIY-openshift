@@ -17,11 +17,11 @@ PhantomJS ([phantomjs.org](http://phantomjs.org)) is a headless WebKit scriptabl
 Installation
 -----
 
-To get your custom PHP version working at OpenShift, you have to do the following:
+To get your custom phantomjs-with ghostdriver version working at OpenShift, you have to do the following:
 
 1. Create a new Openshift "Do-It-Yourself" application.
 2. Clone this repository.
-    * ! Optionally you might want to change to a different branch to get a different PHP version.
+    * ! Optionally you might want to change to a different branch to get a different phantomjs-with ghostdriver version.
 3. Add a new remote "openshift" (You can find the URL to your git repository on the Openshift application page)
 4. Run `git push --force "openshift" master:master`
 5. SSH into your gear

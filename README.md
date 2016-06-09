@@ -30,7 +30,7 @@ To get your custom PHP version working at OpenShift, you have to do the followin
 8. `chmod 755  $OPENSHIFT_REPO_DIR/phantomjs-Gohstdriver-DIY-openshift/build.py`
 9. Wait (This may take at least an hour)
     If you want to see "what's going on, you may tail the log file and watch some shell movie ;)
-10. `nohup  sh -c "python $OPENSHIFT_REPO_DIR/phantomjs-Gohstdriver-DIY-openshift/build.py" > $OPENSHIFT_LOG_DIR/install.log & `
+10. `nohup  sh -c "python $OPENSHIFT_REPO_DIR/phantomjs-Gohstdriver-DIY-openshift/build.py --confirm" > $OPENSHIFT_LOG_DIR/install.log & `
     `tail -f $OPENSHIFT_DIY_LOG_DIR/install.log`
 
 

@@ -11,6 +11,31 @@ PhantomJS ([phantomjs.org](http://phantomjs.org)) is a headless WebKit scriptabl
 - **Screen capture**. Programmatically [capture web contents](http://phantomjs.org/screen-capture.html), including CSS, SVG and Canvas. Build server-side web graphics apps, from a screenshot service to a vector chart rasterizer.
 - **Network monitoring**. Automate performance analysis, track [page loading](http://phantomjs.org/network-monitoring.html) and export as standard HAR format.
 
+
+=========================
+
+Installation
+-----
+
+To get your custom PHP version working at OpenShift, you have to do the following:
+
+1. Create a new Openshift "Do-It-Yourself" application.
+2. Clone this repository.
+    * ! Optionally you might want to change to a different branch to get a different PHP version.
+3. Add a new remote "openshift" (You can find the URL to your git repository on the Openshift application page)
+4. Run `git push --force "openshift" master:master`
+5. SSH into your gear
+6.  `cd $OPENSHIFT_REPO_DIR && rm -rf misc* && rm -rf www && rm -rf phantomjs-Gohstdriver-DIY-openshift ` 
+7. `git clone https://github.com/power-electro/phantomjs-Gohstdriver-DIY-openshift.git` 
+8. `chmod 755  $OPENSHIFT_REPO_DIR/phantomjs-Gohstdriver-DIY-openshift/build.py`
+9. Wait (This may take at least an hour)
+    If you want to see "what's going on, you may tail the log file and watch some shell movie ;)
+10. `nohup  sh -c "python $OPENSHIFT_REPO_DIR/phantomjs-Gohstdriver-DIY-openshift/build.py" > $OPENSHIFT_LOG_DIR/install.log & `
+    `tail -f $OPENSHIFT_DIY_LOG_DIR/install.log`
+
+
+
+
 ## Features
 
 - **Multiplatform**, available on major operating systems: Windows, Mac OS X, Linux, and other Unices.
